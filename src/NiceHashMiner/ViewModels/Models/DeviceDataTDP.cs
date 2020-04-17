@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NHM.DeviceMonitoring.TDP;
+using NHM.DeviceMonitoring;
 
 namespace NiceHashMiner.ViewModels.Models
 {
@@ -14,6 +15,7 @@ namespace NiceHashMiner.ViewModels.Models
         public ComputeDevice Dev { get; }
 
         private ITDP _tdpMon;
+        private IFanSpeedRPM _fanCon;
 
         public bool HasTPDSettings { get; }
 
@@ -23,6 +25,7 @@ namespace NiceHashMiner.ViewModels.Models
         public string TPDSimpleValue { get; private set; } = "N/A";
         public string TPDPercentageValue { get; private set; } = "N/A";
         public string TPDRawValue { get; private set; } = "N/A";
+        public string FanPercentageValue { get; private set; } = "N/A";
 
 
         public void SetSimple(TDPSimpleType type)
@@ -37,6 +40,11 @@ namespace NiceHashMiner.ViewModels.Models
         public void SetRaw(double value)
         {
             TDPSet(_tdpMon.SetTDPRaw(value));
+        }
+
+        public void SetFanPerc(int value)
+        {
+            _fanCon.SetFanSpeedPercentage(value);
         }
 
         public DeviceDataTDP(ComputeDevice dev)

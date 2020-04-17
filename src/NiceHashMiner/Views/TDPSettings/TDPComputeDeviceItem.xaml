@@ -56,6 +56,17 @@
                     <TextBox x:Name="textBox_raw" Width="50" />
                 </StackPanel>
             </StackPanel>
+            <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Foreground="{StaticResource Gray1ColorBrush}" Text="FAN"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Get"/>
+                    <TextBlock Text="{Binding FanPercentageValue}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Set" Click="Button_Click"/>
+                    <TextBox x:Name="tbx_fanPerc" Width="50" />
+                </StackPanel>
+            </StackPanel>
         </UniformGrid>
     </Grid>
 </UserControl>

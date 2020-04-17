@@ -188,6 +188,12 @@ namespace NHM.DeviceMonitoring
             }
         }
 
+
+        public bool SetFanSpeedPercentage(int percentage)
+        {
+            throw new NotImplementedException();
+        }
+
         // NVML is thread-safe according to the documentation
         private T ExecNvmlProcedure<T>(T failReturn, string tag, Func<T> nvmlExecFun)
         {

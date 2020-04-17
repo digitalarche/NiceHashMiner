@@ -77,5 +77,17 @@ namespace NiceHashMiner.Views.TDPSettings
                 // TODO
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(textBox_percentage.Text, out var value))
+            {
+                _deviceDataTDP.SetFanPerc(value);
+            }
+            else
+            {
+                // TODO
+            }
+        }
     }
 }
